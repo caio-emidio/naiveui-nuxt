@@ -1,7 +1,11 @@
 <template>
   <NaiveConfig :theme-config="themeConfig">
-    <NaiveNavbar :routes="navbarRoutes" :menu-inverted="false" drawer-closable menu-placement="center">
-
+    <NaiveNavbar
+      :routes="navbarRoutes"
+      :menu-inverted="false"
+      drawer-closable
+      menu-placement="center"
+    >
       <template #start>
         <nuxt-link to="/">
           <NaiveIcon name="logos:naiveui"></NaiveIcon>
@@ -10,7 +14,11 @@
       </template>
 
       <template #end>
-        <NuxtLink to="https://github.com/becem-gharbi/nuxt-naiveui" target="_" aria-label="source-code">
+        <NuxtLink
+          to="https://github.com/becem-gharbi/nuxt-naiveui"
+          target="_"
+          aria-label="source-code"
+        >
           <n-button text tag="span">
             <NaiveIcon name="cib:github" />
           </n-button>
@@ -25,25 +33,26 @@
       <template #drawer-footer>
         <n-text>Footer</n-text>
       </template>
-
     </NaiveNavbar>
 
     <NuxtPage></NuxtPage>
 
     <NaiveTabbar :routes="tabBarRoutes" />
-
   </NaiveConfig>
 </template>
 
-
 <script setup lang="ts">
-import { ThemeConfig, NavbarRoute, TabbarRoute } from "@bg-dev/nuxt-naiveui"
+import { definePageMeta } from '#imports';
 
-const navbarRoutes: NavbarRoute[] = [
+definePageMeta({
+  colorMode: "dark",
+});
+
+const navbarRoutes = [
   {
     label: "Sample, this is a long long lable",
     icon: "ri:home-4-line",
-    path: "/"
+    path: "/",
   },
   {
     label: "Categories",
@@ -52,53 +61,56 @@ const navbarRoutes: NavbarRoute[] = [
       {
         label: "Books",
         icon: "material-symbols:menu-book-outline-rounded",
-        path: "/books"
+        path: "/books",
       },
       {
         label: "Computers",
         icon: "material-symbols:computer-outline",
-        path: "/computers"
-      }
-    ]
-  }
-]
+        path: "/computers",
+      },
+    ],
+  },
+];
 
-const tabBarRoutes: TabbarRoute[] = [
+const tabBarRoutes = [
   {
     label: "Sample",
     iconUnselected: "ri:home-4-line",
     iconSelected: "material-symbols:home-sharp",
-    path: "/"
+    path: "/",
   },
   {
     label: "Books",
     iconUnselected: "material-symbols:menu-book-outline-rounded",
     iconSelected: "material-symbols:menu-book-sharp",
-    path: "/books"
+    path: "/books",
   },
   {
     label: "Computers",
     iconUnselected: "material-symbols:computer-outline",
     iconSelected: "material-symbols:computer",
-    path: "/computers"
-  }
-]
+    path: "/computers",
+  },
+];
 
-const themeConfig: ThemeConfig = {
+const themeConfig = {
   shared: {
     common: {
       fontFamily: "Gellix",
-
-    }
+      fontSize: "1.2rem",
+      primaryColor: "#8a2be2",
+      primaryColorHover: "#7a1be2",
+      primaryColorPressed: "#9C5BE2",
+      primaryColorSuppl: "rgb(42, 148, 125)",
+    },
   },
-}
+};
 </script>
-
 
 <style scoped>
 .brand {
   display: flex;
   align-items: center;
-  gap: 1em
+  gap: 1em;
 }
 </style>

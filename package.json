@@ -24,9 +24,9 @@
   ],
   "scripts": {
     "prepack": "nuxt-module-build",
-    "dev": "nuxi dev playground",
-    "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "dev": "nuxi dev",
+    "dev:build": "nuxi build",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare",
     "release": "npm run prepack && changelogen --release && npm publish && git push --follow-tags",
     "lint": "eslint .",
     "test": "vitest run",

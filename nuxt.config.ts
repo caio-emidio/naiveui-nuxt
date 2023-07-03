@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   },
 
   css: ["~/assets/fonts/gellix/style.css"],
-  modules: ["../src/module"],
+  modules: ["../src/module.ts"],
   naiveui: {
     colorModePreference: "light",
   },
